@@ -1,0 +1,44 @@
+﻿@model IEnumerable<PimVIII.Models.Pessoa>
+
+@{ ViewData["Title"] = "Pessoas"; }
+
+<h2>@ViewData["Title"]</h2>
+<h2>
+    <p>
+        <a asp-action="Create">+</a>
+    </p>
+</h2>
+   
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CPF)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CPF)
+    </td>
+    <td>
+        <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+        <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>|
+        <a asp-controller="Enderecoes" asp-action="Index" asp-route-id="@item.Id">Endereco</a> |
+        <a asp-controller="Telefones" asp-action="Index" asp-route-id="@item.Id">Telefone</a>
+
+    </td>
+</tr>
+}
+    </tbody>
+</table>

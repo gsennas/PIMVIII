@@ -1,0 +1,68 @@
+﻿@model PimVIII.Models.Endereco
+
+@{
+    ViewData["Title"] = "Endereço";
+}
+
+
+<h2>@ViewData["Title"]</h2>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+           
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Logradouro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Numero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CEP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bairro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => Model.Logradouro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.Numero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.CEP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.Bairro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.Cidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.Estado)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+                <a asp-action="Delete" asp-route-id="@Model.Id">Excluir</a>|
+                <a asp-controller="Pessoas" asp-action="Index">Menu Anterior</a>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
